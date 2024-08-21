@@ -1,0 +1,49 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+    cursor: none; /* Masque le curseur par défaut */
+    background-image: url(background.jpg);
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    color: white;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Assurez-vous que la barre de navigation est au-dessus de l'image */
+    text-align: center;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+#navbar a:hover {
+    text-decoration: underline;
+}
+
+#large-image {
+    position: absolute;
+    top: 40px; /* Assurez-vous que l'image commence après la barre de navigation */
+    left: 0;
+    transform: scale(0.25); /* Zoom à 25% */
+    transform-origin: top left; /* Point d'origine pour le zoom */
+    cursor: inherit; /* Hérite du curseur grab */
+}
+
