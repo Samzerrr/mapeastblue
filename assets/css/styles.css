@@ -1,0 +1,51 @@
+/* styles.css */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  cursor: none;
+  background-image: url(../../assets/images/background.jpg);
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#navbar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  text-align: center;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+  font-size: 18px;
+}
+
+#navbar a:hover {
+  text-decoration: underline;
+}
+
+#large-image {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 40px);
+  object-fit: cover;
+  transform-origin: top left;
+  cursor: inherit;
+}
