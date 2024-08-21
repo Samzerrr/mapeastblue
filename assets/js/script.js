@@ -18,7 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function initializeImagePosition() {
         image.style.position = 'absolute';
         image.style.left = '0px';
-        image.style.top = '0px';
+        image.style.top = '40px';
+        image.style.width = (container.clientWidth / scale) + 'px';
+        image.style.height = 'auto';
+        image.style.transform = `scale(${scale})`;
+        image.style.transformOrigin = 'top left';
     }
 
     function onMouseDown(e) {
@@ -36,8 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const dx = (e.clientX - dragStart.x) / scale;
         const dy = (e.clientY - dragStart.y) / scale;
 
-        image.style.left = clampPosition(imageStartPosition.left + dx, 0, -(image.width * scale - container.clientWidth)) + 'px';
-        image.style.top = clampPosition(imageStartPosition.top + dy, 0, -(image.height * scale - container.clientHeight)) + 'px';
+        const newLeft = clampPosition(imageStartPosition.left + dx, 0, -(image.clientWidth * scale - container.clientWidth));
+        const newTop = clampPosition(imageStartPosition.top + dy, 40, -(image.clientHeight * scale - container.clientHeight + 40));
+
+        image.style.left = newLeft + 'px';
+        image.style.top = newTop + 'px';
     }
 
     function stopDragging() {
